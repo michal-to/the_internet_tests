@@ -1,25 +1,25 @@
-Feature: Cloud Testing Project - POC
+Feature: Cloud Testing Project - POC - 4
 
-  Scenario: Go to the Internet home page
+  Scenario: Go to the Internet home page 4
     When user is on The Internet home page
     Then the page title is "The Internet"
 
   Scenario: Go to the Internet sub page "abtest"
     When user is on following sub page "abtest"
     Then the page contains text "No A/B Test"
-    
+
   Scenario: Go to the Internet sub page "disappearing_elements"
     When user is on following sub page "disappearing_elements"
     Then the page contains text "Disappearing Elements"
-    
+
   Scenario: Go to the Internet sub page "drag_and_drop"
     When user is on following sub page "drag_and_drop"
     Then the page contains text "Drag and Drop"
-    
+
   Scenario: Go to the Internet sub page "dropdown"
     When user is on following sub page "dropdown"
     Then the page contains text "Dropdown"
-    
+
   Scenario: Go to the Internet sub page "dynamic_content"
     When user is on following sub page "dynamic_content"
     Then the page contains text "Dynamic Content"

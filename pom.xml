@@ -173,7 +173,7 @@
                         <include>**/*TestSuite.java</include>
                         <include>**/When*.java</include>
                     </includes>
-                    <parallel>classes</parallel>
+                    <parallel>all</parallel>
                     <threadCount>${parallel.tests}</threadCount>
                     <forkCount>${parallel.tests}</forkCount>
                 </configuration>
@@ -208,6 +208,30 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.github.temyers</groupId>
+                <artifactId>cucumber-jvm-parallel-plugin</artifactId>
+                <version>4.2.0</version>
+                <executions>
+                    <execution>
+                        <id>generateRunners</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>generateRunners</goal>
+                        </goals>
+                        <configuration>
+                            <!-- Mandatory -->
+                            <!-- List of package names to scan for glue code. -->
+                            <glue>
+                                <package>planner.cucumber</package>
+                            </glue>
+                            <parallelScheme>FEATURE</parallelScheme>
+                            <customVmTemplate>src/test/resources/cucumber-serenity-runner.vm</customVmTemplate>
+                        </configuration>
+                    </execution>
+                </executions>
+
             </plugin>
         </plugins>
     </build>

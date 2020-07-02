@@ -11,8 +11,16 @@ public class NavigateTo {
         theInternetHomePage.open();
     }
 
-    public String getTitle(){
-       return theInternetHomePage.getTitle();
+    public void openPage(String page) {
+        theInternetHomePage.openAt(page);
+    }
+
+    public String getTitle() {
+        return theInternetHomePage.getTitle();
+    }
+
+    public boolean contains(String text) {
+        return theInternetHomePage.containsText(text);
     }
 
 }
